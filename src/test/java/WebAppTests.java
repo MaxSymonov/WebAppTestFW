@@ -9,7 +9,6 @@ public class WebAppTests {
 
     @Test()
     public void test1_StartWebSession() {
-        System.out.println("Starting web browser session");
 
         WebAppBase.setUpBrowserSession();
 
