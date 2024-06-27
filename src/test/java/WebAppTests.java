@@ -1,8 +1,6 @@
-import WebAppBase.WebUtilMethods;
 import WebAppBase.WebAppBase;
+import WebAppBase.WebUtilMethods;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class WebAppTests {
@@ -16,12 +14,13 @@ public class WebAppTests {
 
         WebUtilMethods.getPage().loginPage().login();
 
-        System.out.println("Validating page title");
+        System.out.println("Switch to next tab");
 
-        WebUtilMethods.getPage().mainPage().validatePageTitleIs("Home Page");
+        WebUtilMethods.getPage().mainPage().switchToNextTab();
+    }
 
-        System.out.println("Closing webdriver and quitting browser");
-
+    @AfterMethod
+    public void tearDown() {
         WebAppBase.tearDownBrowserSession();
     }
 }
